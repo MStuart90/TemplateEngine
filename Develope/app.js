@@ -77,4 +77,40 @@ class Main {
                     when: ({ role })=> role === "Manager"
                 },
             ]);
-  
+              
+            const {
+                name,
+                id,
+                email,
+                role,
+                github,
+                school,
+                officeNumber,
+            } = response;
+
+            if (role == 'Engineer') {
+                this.teamArray.push(new Engineer(name, id, email, github))
+            }
+            if (role == 'Manager') {
+                this.teamArray.push(new Manager(name, id, email, officeNumber))
+            }
+            if (role == 'Intern') {
+                this.teamArray.push(new Intern(name, id, email, school))
+            }
+        }
+       
+        const html = render(this.teamArray);
+        fs.writeFile("team.html", html, function(err) {
+
+            if (err) {
+              return console.log(err);
+            }
+          
+            console.log("Success!");
+          
+          });     
+    }
+}
+
+const program = new Main();
+program.run();
