@@ -49,6 +49,11 @@ class Main {
                     message: 'Enter team member email',
                 },
                 {
+                    type: 'input',
+                    name: 'quote',
+                    message: 'Enter favorite office quote',
+                },
+                {
                     type: 'list',
                     name: 'role',
                     message: "Choose team member's role",
@@ -82,6 +87,7 @@ class Main {
                 name,
                 id,
                 email,
+                quote,
                 role,
                 github,
                 school,
@@ -89,13 +95,13 @@ class Main {
             } = response;
 
             if (role == 'Engineer') {
-                this.teamArray.push(new Engineer(name, id, email, github))
+                this.teamArray.push(new Engineer(name, id, quote, email, github))
             }
             if (role == 'Manager') {
-                this.teamArray.push(new Manager(name, id, email, officeNumber))
+                this.teamArray.push(new Manager(name, id, quote, email, officeNumber))
             }
             if (role == 'Intern') {
-                this.teamArray.push(new Intern(name, id, email, school))
+                this.teamArray.push(new Intern(name, id, quote, email, school))
             }
         }
        
