@@ -3,8 +3,8 @@
 var Employee = require('./Employee')
 
 class Intern extends Employee {
-    constructor(name, id, email, school){
-        super(name, id, email);
+    constructor(name, id, email, quote, school){
+        super(name, id, email, quote);
         this.school = school  
     };
     

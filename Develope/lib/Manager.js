@@ -3,8 +3,8 @@
 var Employee = require('./Employee')
 
 class Manager extends Employee {
-    constructor(name, id, email, officeNumber){
-        super(name, id, email);
+    constructor(name, id, email, quote, officeNumber){
+        super(name, id, email, quote);
         this.officeNumber = officeNumber    
     };
 
